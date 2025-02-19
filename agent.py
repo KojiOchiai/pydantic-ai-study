@@ -99,7 +99,7 @@ async def get_content_tool(ctx: RunContext[Note], title: str) -> str:
     return ctx.deps.get_content(title)
 
 
-def main():
+if __name__ == "__main__":
     questions = [
         "I am Hoge",
         "I like to play games",
@@ -121,7 +121,3 @@ def main():
         result = agent.run_sync(question, message_history=message_history, deps=deps)
         message_history = result.all_messages()
         print("Assistant: ", result.data)
-
-
-if __name__ == "__main__":
-    main()
